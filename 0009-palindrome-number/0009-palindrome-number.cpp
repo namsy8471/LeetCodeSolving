@@ -1,12 +1,16 @@
 class Solution {
 public:
     bool isPalindrome(int x) {
-        string s = to_string(x);
-        string rev = s;
+        if (x < 0 || (x % 10 == 0 && x != 0)) {
+            return false;
+        }
 
-        reverse(rev.begin(), rev.end());
+        int revertedNumber = 0;
+        while (x > revertedNumber) {
+            revertedNumber = revertedNumber * 10 + x % 10;
+            x /= 10;
+        }
 
-        if (s == rev) return true;
-        else return false;
+        return x == revertedNumber || x == revertedNumber / 10;
     }
 };
