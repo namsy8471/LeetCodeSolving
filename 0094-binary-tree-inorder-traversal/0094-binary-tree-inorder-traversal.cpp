@@ -14,15 +14,14 @@ public:
     vector<int> inorderTraversal(TreeNode* root) {
         vector<int> ret;
 
-        if(root != nullptr)
-            recursion(ret, root);
+        recursion(ret, root);
 
         return ret;
     }
 
     void recursion(vector<int>& v, TreeNode* node)
     {
-        
+        if(node == nullptr) return;
         if(node->left != nullptr) recursion(v, node->left);
 
         v.push_back(node->val);
