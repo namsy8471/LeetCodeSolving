@@ -12,7 +12,6 @@
 class Solution {
 public:
     TreeNode* sortedArrayToBST(vector<int>& nums) {
-        if (nums.empty()) return nullptr;
         return buildTree(nums, 0, nums.size() - 1);
     }
 
