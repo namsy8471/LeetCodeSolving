@@ -13,26 +13,22 @@ class Solution {
 
 private:
 
-    bool FindWays(TreeNode* root, int nodeSum, int target)
+    bool FindWays(TreeNode* root, int target)
     {
         if (root == nullptr) return false;
-        int sum = root->val + nodeSum;
 
-        if (sum == target && root->left == nullptr && root->right == nullptr) return true;
+        target -= root->val;
 
-        if (root->left == nullptr) {
-            return FindWays(root->right, root->val + nodeSum, target);
-        }
-        if (root->right == nullptr) {
-            return FindWays(root->left, root->val + nodeSum, target);
-        }
+        bool isLeaf = root->left == nullptr && root->right == nullptr;
+
+        if (isLeaf) return target == 0;
         
-        return FindWays(root->left, root->val + nodeSum, target)
-            || FindWays(root->right, root->val + nodeSum, target);
+        return FindWays(root->left, target)
+            || FindWays(root->right, target);
     }
 
 public:
     bool hasPathSum(TreeNode* root, int targetSum) {
-        return FindWays(root, 0, targetSum);
+        return FindWays(root, targetSum);
     }
 };
