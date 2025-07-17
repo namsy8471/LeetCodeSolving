@@ -7,6 +7,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0001-two-sum](https://github.com/namsy8471/LeetCodeSolving/tree/master/0001-two-sum) |
+| [0004-median-of-two-sorted-arrays](https://github.com/namsy8471/LeetCodeSolving/tree/master/0004-median-of-two-sorted-arrays) |
 | [0026-remove-duplicates-from-sorted-array](https://github.com/namsy8471/LeetCodeSolving/tree/master/0026-remove-duplicates-from-sorted-array) |
 | [0027-remove-element](https://github.com/namsy8471/LeetCodeSolving/tree/master/0027-remove-element) |
 | [0035-search-insert-position](https://github.com/namsy8471/LeetCodeSolving/tree/master/0035-search-insert-position) |
@@ -97,6 +98,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Binary Search
 |  |
 | ------- |
+| [0004-median-of-two-sorted-arrays](https://github.com/namsy8471/LeetCodeSolving/tree/master/0004-median-of-two-sorted-arrays) |
 | [0035-search-insert-position](https://github.com/namsy8471/LeetCodeSolving/tree/master/0035-search-insert-position) |
 | [0069-sqrtx](https://github.com/namsy8471/LeetCodeSolving/tree/master/0069-sqrtx) |
 ## Bit Manipulation
@@ -175,6 +177,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Divide and Conquer
 |  |
 | ------- |
+| [0004-median-of-two-sorted-arrays](https://github.com/namsy8471/LeetCodeSolving/tree/master/0004-median-of-two-sorted-arrays) |
 | [0108-convert-sorted-array-to-binary-search-tree](https://github.com/namsy8471/LeetCodeSolving/tree/master/0108-convert-sorted-array-to-binary-search-tree) |
 | [0169-majority-element](https://github.com/namsy8471/LeetCodeSolving/tree/master/0169-majority-element) |
 | [0190-reverse-bits](https://github.com/namsy8471/LeetCodeSolving/tree/master/0190-reverse-bits) |
