@@ -3,13 +3,13 @@ public:
     string intToRoman(int num) {
         
         string ret = "";
-        vector<int> v ={1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+        const array<int, 13> arr = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
 
         int idx = 0;
 
         while(num > 0)
         {
-            auto curNum = v[idx];
+            auto curNum = arr[idx];
             if(num >= curNum)
             {
                 ret += CalcChar(curNum);
