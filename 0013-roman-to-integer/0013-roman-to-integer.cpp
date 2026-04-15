@@ -1,68 +1,27 @@
 class Solution {
 public:
     int romanToInt(string s) {
-        int sum = 0;
-        char prev = -1;  
-        
-        for (auto c : s)  
-        {  
-            switch (c)  
-            {  
-                case 'M':
-                    if (prev == 'C')
-                        sum += 800;
-                    else
-                        sum += 1000;
-                    break;
+        const array<string, 13> arr = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+const array<int, 13> intArr = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+    
+        int ret = 0;
+        int idx = 0;
+        while(idx < s.length())
+        {
+            for(int j = 0; j < arr.size(); j++)
+            {
+                auto size = arr[j].length();
+                auto cmp = s.substr(idx, size);
 
-                case 'D':
-                    if (prev == 'C')
-                        sum += 300;
-                    else
-                        sum += 500;
-
+                if (arr[j] == cmp)
+                {
+                    idx += size;
+                    ret += intArr[j];
                     break;
-
-                case 'C':
-                    if (prev == 'X')
-                        sum += 80;
-                    else
-                        sum += 100;
-                    break;
-
-                case 'L':
-                    if (prev == 'X')
-                        sum += 30;
-                    else
-                        sum += 50;
-                    break;
-
-                case 'X':
-                    if (prev == 'I')
-                        sum += 8;
-                    else
-                        sum += 10;
-                    break;
-
-                case 'V':
-                    if (prev == 'I')
-                        sum += 3;
-                    else
-                        sum += 5;
-
-                    break;
-
-                case 'I':
-                    sum += 1;
-                    break;
-                
-                default:
-                    break;
+                }
             }
-
-            prev = c;
         }
 
-        return sum;
+        return ret;
     }
 };
