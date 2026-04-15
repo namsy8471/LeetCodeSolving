@@ -4,12 +4,13 @@ public:
 
     vector<string> generateParenthesis(int n) {
 
-        Calc("", 0, 0, v, n);
+        string s = "";
+        Calc(s, 0, 0, v, n);
         
         return v;
     }
 
-    void Calc(string currentStr, int open, int close, vector<string>& v, int n)
+    void Calc(string& currentStr, int open, int close, vector<string>& v, int n)
     {
         if(close == n)
         {
@@ -19,14 +20,16 @@ public:
 
         if(open < n)
         {
-            auto newStr = currentStr + '(';
-            Calc(newStr, open + 1, close, v, n);
+            currentStr += '(';
+            Calc(currentStr, open + 1, close, v, n);
+            currentStr.pop_back();
         }
 
         if(close < open)
         {
-            auto newStr = currentStr + ')';
-            Calc(newStr, open, close + 1, v, n);
+            currentStr += ')';
+            Calc(currentStr, open, close + 1, v, n);
+            currentStr.pop_back();
         }
 
     }
