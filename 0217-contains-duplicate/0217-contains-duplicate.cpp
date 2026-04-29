@@ -3,9 +3,9 @@ public:
     bool containsDuplicate(vector<int>& nums) {
         
         sort(nums.begin(), nums.end());
-        vector<int> newNum(nums.begin(), nums.end());
-        newNum.erase(unique(newNum.begin(), newNum.end()), newNum.end());
+        int originSize = nums.size();
+        nums.erase(unique(nums.begin(), nums.end()), nums.end());
 
-        return nums.size() != newNum.size();
+        return nums.size() != originSize;
     }
 };
