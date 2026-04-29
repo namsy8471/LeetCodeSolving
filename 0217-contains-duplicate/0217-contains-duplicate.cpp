@@ -3,9 +3,11 @@ public:
     bool containsDuplicate(vector<int>& nums) {
         
         sort(nums.begin(), nums.end());
-        int originSize = nums.size();
-        nums.erase(unique(nums.begin(), nums.end()), nums.end());
+        for(int i = 0; i < nums.size() - 1; i++)
+        {
+            if(nums[i] == nums[i + 1]) return true;
+        }
 
-        return nums.size() != originSize;
+        return false;
     }
 };
