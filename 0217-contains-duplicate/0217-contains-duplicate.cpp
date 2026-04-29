@@ -1,13 +1,11 @@
 class Solution {
 public:
     bool containsDuplicate(vector<int>& nums) {
-        std::unordered_map<int, int> m;
+        
+        sort(nums.begin(), nums.end());
+        vector<int> newNum(nums.begin(), nums.end());
+        newNum.erase(unique(newNum.begin(), newNum.end()), newNum.end());
 
-        for(auto num : nums){
-            if(m[num] >= 1) return true;
-            m[num]++;
-        }
-
-        return false;
+        return nums.size() != newNum.size();
     }
 };
