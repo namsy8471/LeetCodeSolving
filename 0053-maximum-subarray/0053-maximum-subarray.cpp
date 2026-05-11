@@ -1,20 +1,40 @@
 class Solution {
 public:
-    int maxSubArray(vector<int>& nums) {
-        int maxSum = nums[0];
-        int currentSum = 0;
+    int findMaxSubArray(vector<int>& nums, int left, int right)
+    {
+        if (left == right) return nums[left];
 
-        for(int i = 0; i < nums.size(); i++)
+        int mid = (left + right) / 2;
+        int leftMax = findMaxSubArray(nums, left, mid);
+        int rightMax = findMaxSubArray(nums, mid + 1, right);
+
+        int midLeftMax = nums[mid];
+        int midRightMax = nums[mid];
+        int curMax = nums[mid];
+
+        for(int i = mid - 1; i >= left; i--)
         {
-            currentSum += nums[i];
-
-            if(maxSum < currentSum) maxSum = currentSum;
-            if(currentSum < 0)
-            {
-                currentSum = 0;
-            }
+            curMax += nums[i];
+            if(midLeftMax <= curMax)
+                midLeftMax = curMax;
         }
 
-        return maxSum;
+        curMax = nums[mid];
+
+        for(int i = mid + 1; i <= right; i++)
+        {
+            curMax += nums[i];
+            if(midRightMax <= curMax)
+                midRightMax = curMax;
+        }
+
+        int midMax = midLeftMax + midRightMax - nums[mid];
+
+        return max({leftMax, rightMax, midMax});
+    }
+
+    int maxSubArray(vector<int>& nums) {
+        
+        return findMaxSubArray(nums, 0, nums.size() - 1);
     }
 };
