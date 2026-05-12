@@ -20,6 +20,6 @@ public:
             }
         }
 
-        return nums[(left + right) / 2];
+        return nums[left];
     }
 };
